@@ -86,6 +86,8 @@ DATABASES = {
         'PASSWORD': 'Jay.pethad9',
     }
 }
+import pymysql
+pymysql.install_as_MySQLdb()
 
 
 
