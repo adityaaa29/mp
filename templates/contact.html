@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+
+{% block title %}Report{% endblock title %}
+{% block body %}
+<div class="container-fluid">
+    <center><img src="static\pics\rep.jpg" class="img-fluid" alt="Responsive image"></center>
+</div>
+<div class="container">
+    <div class="container  py-4">
+        <h1 class="text-center">Give suggestions to improve our website</h1>
+    </div>
+<div class="container" style="max-width: 550px; margin: 0 auto;">
+<form method="post" action="contact">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="name" class="form-label">Enter your name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Full name">
+    </div>
+    <div class="mb-3">
+        <label for="contact" class="form-label">Enter your contact number</label>
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="Phone number">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter your email" >
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Type your suggestions here </label>
+        <textarea type="desc" class="form-control" id="desc" name="desc" placeholder="suggesion  " rows="5"></textarea>
+    </div>
+    <button style= "margin-bottom:30px "type="submit" class="btn btn-primary">Submit</button>
+</form>
+    {% endblock body %}

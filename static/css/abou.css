@@ -1,0 +1,16 @@
+*{margin: 0;
+    padding: 0; 
+    box-sizing: border-box;
+    }
+.bas{
+    background-color: 
+    rgb(153, 221, 255);
+}
+.ash{
+    background-color: 
+    rgb(255, 179, 179);
+}
+.sho{
+    
+    box-shadow: 10px 10px 10px black;
+}

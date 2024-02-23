@@ -1,0 +1,66 @@
+{% extends 'home.html' %}
+{% block title %}{% endblock title %}
+{% block body %}
+<div class="fluid">
+  <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner" >
+      <div  class="carousel-item active"> 
+        <img src="static\pics\car1.png" >
+      </div> 
+      <div class="carousel-item">
+        <img src="static\pics\car2.png" >
+      </div>
+      <div class="carousel-item">
+        <img src="static\pics\car3.png" >
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  </div>
+  <div class="container my-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      {% for cars in cars %}
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="{{cars.img.url}}" alt="" >
+          <div class="card-body">
+            <p class="card-text">{{cars.desc}}</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group" >
+                {% if user.is_authenticated %}
+                <a href="shop">
+                {% else %}
+                <a href="register">
+                {% endif %}
+                <button type="button" class="btn btn-sm btn-outline-secondary"><b>{{cars.name}}</b></button>
+                </a>
+              </div>
+              {% if cars.offer %}
+              <img src="static\pics\offer3.png" alt="" height="55"> 
+              {% endif %}  
+              <small class="text-muted"><h1>₹{{cars.price}}</h1></small>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+  <div class="">
+    <p class="flex mb-2" style="text-align:center">
+      <p></p>
+      <a href="#">Back to top</button></a> &nbsp&nbsp&nbsp&nbsp
+      <a href="http://127.0.0.1:8000/admin/showroom/showroom/">Add cars</a>
+    </p>
+  </div>
+{% endblock body %}

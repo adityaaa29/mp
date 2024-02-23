@@ -1,0 +1,40 @@
+{% extends 'home.html' %}
+{% block body %}
+<html class="htm">
+<body class='carlog'>
+    <div class="form">
+        <span class="form_title">Sign up</span>
+        <form action="register" method="POST">
+        {% csrf_token %}
+        <div class="form_input">
+        <i class="ri-user-line" ></i>
+        <input  type="text" id="first_name" name="name" placeholder="Name"> <span class="bar"></span>
+        </div>
+        <div class="form_input">
+            <i class="ri-user-line"></i>
+            <input type="text" id="username" name="username" placeholder="Username"> <span class="bar"></span>
+            </div>
+        <div class="form_input">
+        <i class="ri-mail-line"></i>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Email"  required>
+        </div>
+        <div class="form_input">
+        <i class="ri-lock-line"></i>
+        <input type="password" id="password1" name="password1" placeholder="Password" required>
+        <span class="bar"></span>
+        </div>
+        <div class="form_input">
+        <i class="ri-lock-line"></i>
+        <input type="password" id="password2" name="password2" placeholder="Confirm password" required>
+        <span class="bar"></span>
+        </div>
+        <button type="submit" class="form_button">Sign up</button>
+        <span class="form_switch">
+        Already have an account? <a href="login">Login</a>
+        </span>
+        </form>
+        </div>
+    </div>
+</body>
+{% endblock body %}
+</html>

@@ -1,0 +1,33 @@
+{% extends 'home.html' %}
+
+{% block title %}Search{% endblock title %}
+{% block body %}
+<div class="mx-4 my-4 px-4 py-4">
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+    {% for cars in all %}
+    <div class="col">
+      <div class="card shadow-sm">
+        <img src="{{cars.img.url}}" alt="" >
+        <div class="card-body">
+          <p class="card-text">{{cars.desc}}</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="btn-group" >
+              {% if user.is_authenticated %}
+              <a href="shop">
+              {% else %}
+              <a href="register">
+              {% endif %}
+              <button type="button" class="btn btn-sm btn-outline-secondary">{{cars.name}}</button>
+            </a>
+            </div>
+            {% if cars.offer %}
+            <img src="static\pics\offer3.png" alt="" height="55"> 
+            {% endif %}  
+            <small class="text-muted"><h1>₹{{cars.price}}</h1></small>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+<div>
+{% endblock body %}
