@@ -10,7 +10,9 @@
             "dest": "cars/wsgi.py"
         }
     ]
-    "scripts": {
+    "scripts": [
+        {
   "build": "pip install mysqlclient"
 }
+    ]
 }
